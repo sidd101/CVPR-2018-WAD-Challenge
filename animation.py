@@ -4,6 +4,9 @@ import matplotlib.pyplot as plt
 from matplotlib import patches,  lines
 from matplotlib.patches import Polygon
 from celluloid import Camera
+import math
+import random
+import numpy as np
 
 class AnimationConfig:
   def __init__(self):
