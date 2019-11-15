@@ -19,10 +19,16 @@ class AnimationConfig:
     return self.camera
   def get_ax(self):
     return self.ax
-
+  
+########################################################################################################################
+#  snapping each image along with bbox, mask and class name. 
+#  This methods uses reference of AnimationConfig class as parameter and using celluloid camera for snaping each image. 
+#  
+#  Note: This is a clone method from matterport maskRCNN utils.py with small tweaks to creation animation from sequence of
+#  images
+########################################################################################################################
 def snap_instance(image, boxes, masks, class_ids, class_names,
-                      scores=None, title="",
-                      figsize=(16, 16),animation=None,
+                      scores=None, title="",animation=None,
                       show_mask=True, show_bbox=True,
                       colors=None, captions=None):
     # Number of instances
@@ -35,6 +41,7 @@ def snap_instance(image, boxes, masks, class_ids, class_names,
     # If no axis is passed, create one and automatically call show()
     if not animation:
          print("\n*** No animation object passed for snapping *** \n")
+         return
 
     # Generate random colors
     colors = colors or visualize.random_colors(N)
