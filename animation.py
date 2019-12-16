@@ -7,6 +7,7 @@ from celluloid import Camera
 import math
 import random
 import numpy as np
+import cv2
 
 class AnimationConfig:
   def __init__(self):
